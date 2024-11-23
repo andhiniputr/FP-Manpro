@@ -1,0 +1,476 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100vh;
+}
+
+.garis {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.garis1,
+.garis2 {
+  width: 100%;
+  height: 13px;
+}
+
+.garis1 {
+  background-color: rgba(202, 212, 177, 1);
+}
+
+.garis2 {
+  background-color: rgba(243, 241, 212, 1);
+}
+
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.dekor {
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  font-family: "Gabriela";
+  font-size: 60px;
+  margin: 0;
+  font-weight: normal;
+  align-items: center;
+  margin-left: 200px;
+}
+
+.garis3 {
+  width: 550px;
+  height: 5px;
+  background-color: black;
+  margin: 0;
+}
+
+.garis4 {
+  width: 450px;
+  height: 5px;
+  background-color: black;
+  margin: 0;
+}
+
+.lingkaran {
+  margin: 0;
+  width: 15px;
+  height: 15px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.addplan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 1);
+  border: none;
+  padding: 11px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.addplan-text {
+  color: rgba(228, 240, 198, 1);
+  font-family: "Gabriela";
+  font-weight: 500;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.konten-container {
+  display: flex;
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  overflow-y: hidden;
+}
+
+.konten {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: rgba(203, 213, 178, 1);
+  padding: 20px;
+}
+
+.sidebar a {
+  color: black;
+  text-decoration: none;
+  font-family: "Gelasio";
+  width: 100%;
+  margin-left: 10px;
+  height: 30px;
+  font-size: 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  list-style-type: none;
+  margin-bottom: 13px;
+}
+
+.sidebar input[type="text"] {
+  width: 250px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(243, 241, 212, 1);
+  margin: 0 auto;
+  margin-left: 10px;
+  height: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+li select {
+  width: 250px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color:   rgba(243, 241, 212, 1);
+  margin: 0 auto;
+  margin-left: 10px;
+  height: 40px;
+  margin-bottom: 30px;
+}
+.datetime{
+  width: 250px;
+  padding: 5px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color:   rgba(243, 241, 212, 1);
+  margin: 0 auto;
+  margin-left: 10px;
+  height: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+
+li select option {
+  text-align: center;
+  font-family: "Gelasio";
+  font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+  border-radius: 12px;
+  width: 100%;
+  background: #9aa386;
+}
+
+.sidebar li {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+li a span {
+  margin-left: 15px;
+}
+.Icon {
+  width: 25px;
+  height: 25px;
+}
+.describe-container {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow-y: auto;
+}
+
+.describe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  width: 350px;
+  background-color: rgba(243, 241, 212, 1);
+  border-radius: 25px;
+  text-decoration: none;
+  color: black;
+  margin: 5px 20px;
+}
+
+.describe div h1 {
+  font-size: 20px;
+  font-family: "Gabriela";
+  font-weight: normal;
+  text-align: center;
+  margin-top: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+.logout a {
+  display: block;
+  padding: 0px;
+  width: 150px;
+  height: 40px;
+  margin-left: 0;
+  text-align: center;
+  background-color: rgba(101, 114, 68, 1);
+  border-radius: 10px;
+  color: white;
+}
+.logout {
+  margin-top: 200px;
+  margin-left: 30px;
+  padding: 0px;
+  display: block;
+  bottom: 50px;
+  width: 150px;
+  background: #657244;
+  border-radius: 30px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: antiquewhite;
+}
+.isi {
+  background-color: #ffff;
+  height: 250px;
+  width: 300px;
+  margin: auto;
+}
+
+.date1,
+.date2 {
+  background-color: #dfe8c9;
+  height: 30px;
+  width: 100px;
+  margin-left: 70px;
+  margin-top: 10px;
+  float: left;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 20px;
+}
+
+.date2 {
+  background-color: #657244;
+  margin-left: 10px;
+}
+
+.adduser,
+.update {
+  background-color: #ffff;
+  height: 30px;
+  width: 100px;
+  margin-left: 70px;
+  margin-top: 10px;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 15px;
+  cursor: pointer;
+  float: left;
+}
+
+.update {
+  background-color: #ffff;
+  margin-left: 10px;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+#popup {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #cad4b1;
+  padding: 20px;
+  z-index: 10000;
+  position: absolute;
+  width: 340px;
+  height: 390px;
+  border-radius: 20px;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.form-addplan {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(243, 241, 212, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-addplan textarea {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.form-addplan select {
+  width: 200px;
+  appearance: none;
+}
+
+.form-addplan button {
+  background-color: rgba(101, 114, 68, 1);
+  width: 100px;
+  height: 30px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  cursor: pointer;
+  font-family: "Gelasio";
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#add-user {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #cad4b1;
+  padding: 20px;
+  z-index: 10000;
+  position: absolute;
+  width: 340px;
+  height: 390px;
+  border-radius: 20px;
+}
+
+.form-adduser {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(243, 241, 212, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-adduser textarea {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.form-adduser select {
+  width: 200px;
+  appearance: none;
+}
+
+.form-adduser button {
+  background-color: rgba(101, 114, 68, 1);
+  width: 100px;
+  height: 30px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  cursor: pointer;
+  font-family: "Gelasio";
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+#update {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #cad4b1;
+  padding: 20px;
+  z-index: 10000;
+  position: absolute;
+  width: 340px;
+  height: 390px;
+  border-radius: 20px;
+}
+
+.form-update button {
+  background-color: rgba(101, 114, 68, 1);
+  width: 100px;
+  height: 30px;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  cursor: pointer;
+  font-family: "Gelasio";
+  font-size: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.form-update textarea {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 1);
+}
+
+.form-update select {
+  width: 200px;
+  appearance: none;
+}
+
+.form-update {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(243, 241, 212, 1);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
