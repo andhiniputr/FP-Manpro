@@ -1,6 +1,14 @@
+/* Ensure all elements respect the container's width */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden; /* Hide vertical scrollbar */
 }
 
 .container {
@@ -8,8 +16,8 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 100vh;
+  min-height: 100vh; /* Ensure the container spans the full viewport height */
+  box-sizing: border-box;
 }
 
 .garis {
@@ -32,10 +40,13 @@ body {
 }
 
 .header {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
   width: 100%;
+  padding: 10px 20px;
+  background-color: rgba(243, 241, 212, 1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .dekor {
@@ -45,9 +56,12 @@ body {
 
 .header h1 {
   font-family: "Gabriela";
-  font-size: 60px;
+  font-size: 50px;
   margin: 0;
   font-weight: normal;
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping */
+  overflow: visible; /* Allow full text display */
 }
 
 .garis3 {
@@ -72,52 +86,69 @@ body {
   border-radius: 50%;
 }
 
+/* Style the Profile button */
 .profile {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(101, 114, 68, 1);
+  background-color: rgba(101, 114, 68, 1); /* Match the intended color */
   border: none;
-  padding: 11px;
+  padding: 8px 12px; /* Adjusted padding for better fit */
   border-radius: 5px;
   cursor: pointer;
+  white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .profile-text {
-  color: rgba(255, 255, 255, 1);
+  color: rgba(255, 255, 255, 1); /* White text for readability */
   font-family: "Gelasio";
   font-weight: 400;
-  font-size: 15px;
-  margin-right: 10px;
+  font-size: 14px;
+  margin-right: 8px; /* Space between text and profile image */
 }
 
 .profile-image {
-  width: 30px;
-  height: 30px;
+  width: 24px; /* Adjust size */
+  height: 24px;
   border-radius: 50%;
 }
 
 .reminder-history-describe {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  gap: 40px; /* Increase the spacing between sections */
   width: 100%;
+  margin: 20px 0; /* Add top and bottom margin */
 }
 
 .describe {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-around;
-  height: 270px;
-  width: 1160px; /* Updated width */
+  justify-content: space-between;
+  width: 80%;
+  height: auto;
+  max-height: 200px; /* Adjusted to avoid exceeding the viewport */
+  padding: 20px;
   background-color: rgba(243, 241, 212, 1);
   border-radius: 20px;
-  text-decoration: none;
-  color: black;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.reminder-history-container {
+  display: flex;
+  flex-direction: row; /* Align Reminder and History side-by-side */
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px; /* Add consistent spacing between Reminder and History */
+  width: 80%;
+  margin-bottom: 20px; /* Adjust spacing to balance layout */
 }
 
 .describe div {
-  margin-right: 150px;
+  flex: 1; /* Ensure the text area takes up remaining space */
 }
 
 .describe div h1 span {
@@ -129,31 +160,34 @@ body {
   font-size: 60px;
   font-family: "Gelasio";
   font-weight: normal;
-  margin: 0;
+  margin: 0 0 10px 0; /* Add spacing below heading */
 }
 
 .describe div p {
-  font-size: 25px;
+  font-size: 22px; /* Slightly smaller text for readability */
   font-family: "Newsreader";
   font-weight: lighter;
   margin: 0;
 }
 
 .describe img {
-  width: 350px;
-  height: 230px;
-  margin-right: 30px;
+  max-width: 40%; /* Make image responsive */
+  height: auto;
 }
 
 .reminder,
 .history {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  height: auto;
+  width: 48%; /* Slightly less than half to account for gap */
+  padding: 20px; /* Add consistent padding */
   background-color: rgba(203, 213, 178, 1);
-  height: 210px;
-  width: 580px;
   border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+  text-align: left; /* Center-align the text */
   text-decoration: none;
   color: black;
 }
@@ -166,15 +200,15 @@ body {
 
 .reminder div h1,
 .history div h1 {
-  font-size: 40px;
+  font-size: 35px; /* Match heading size */
   font-family: "Gelasio";
   font-weight: normal;
-  margin: 0;
+  margin-bottom: 10px;
 }
 
 .reminder div p,
 .history div p {
-  font-size: 20px;
+  font-size: 18px; /* Smaller font for better readability */
   font-family: "Newsreader";
   font-weight: lighter;
   margin: 0;

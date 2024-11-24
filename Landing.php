@@ -1,3 +1,38 @@
+<?php
+
+include 'conn.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+
+if (isset($_SESSION['ID'])) {
+    header("Location: home.php");
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve form data
+    $email = $_POST['Email'];
+    $password = $_POST['Password'];
+
+    $query = "SELECT * FROM pengguna WHERE Email = '$email' AND Password = '$password'";
+    $result = mysqli_query(connection(), $query);
+
+    if ($result && mysqli_num_rows($result) > 0) {
+        // Successful login
+        $row = mysqli_fetch_assoc($result);
+        $_SESSION['ID'] = $row['ID_Pengguna'];
+        header("Location: home.php");
+        exit;
+    } else {
+        // Incorrect username or password
+        echo "<script>alert('Incorrect username or password.');</script>";
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 

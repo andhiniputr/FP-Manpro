@@ -1,3 +1,11 @@
+<?php
+include('conn.php');
+session_start();
+if (!isset($_SESSION['ID'])) {
+    header("Location: landing.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -71,6 +79,30 @@
                             <th>Deadline</th>
                             <th>Finished</th>
                         </thead>
+                        <?php
+                        //proses menampilkan data dari database:
+                        //siapkan query SQL
+                        $idPengguna = $_SESSION['ID'];
+                        $query = "SELECT *from history where ID_Pengguna ='$idPengguna'";
+                        $result = mysqli_query(connection(), $query);
+                        ?>
+                        <tbody>
+                            <?php while ($data = mysqli_fetch_array($result)): ?>
+                                <tr>
+                                    <td>
+                                        <?php echo $data['ID_History']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $data['Judul']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $data['Tanggal']; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $data['Catatan']; ?>
+                                    </td>
+                                </tr>
+                            <?php endwhile ?>
                         </tbody>
                     </table>
 
