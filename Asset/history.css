@@ -41,14 +41,14 @@
   display: flex;
   align-items: center;
 }
-
+.judul{
+  width: 30%;
+}
 .header h1 {
   font-family: "Gabriela";
   font-size: 60px;
-  margin: 0;
+  margin-right: 50px;
   font-weight: normal;
-  align-items: center;
-  margin-left: 200px;
 }
 
 .garis3 {
@@ -59,7 +59,7 @@
 }
 
 .garis4 {
-  width: 450px;
+  width: 650px;
   height: 5px;
   background-color: black;
   margin: 0;

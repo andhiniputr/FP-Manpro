@@ -1,5 +1,5 @@
-<?php 
-include ('conn.php');
+<?php
+include('conn.php');
 
 if (isset($_POST['submit'])) {
     // Periksa apakah ada checkbox yang dipilih
@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
             $query = "UPDATE tugas SET status = 1 WHERE ID_Tugas = '$taskId'";
             mysqli_query(connection(), $query);
         }
-        
+
         header('Location: History.php');
     } else {
         echo 'Tidak ada tugas yang dipilih.';

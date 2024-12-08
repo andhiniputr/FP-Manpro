@@ -41,6 +41,9 @@
   display: flex;
   align-items: center;
 }
+.judul{
+  width: 30%;
+}
 
 .garis3 {
   width: 550px;
@@ -194,9 +197,7 @@ li a span {
 }
 /* akhir log out */
 
-body {
-  background: #f5f5f5;
-}
+
 
 li select {
   width: 250px;
@@ -220,7 +221,7 @@ li select option {
 .header h1 {
   font-family: "Gabriela";
   font-size: 60px;
-  margin-right: 50px;
+  margin-right: 10px;
   font-weight: normal;
 }
 
@@ -418,27 +419,30 @@ form button[type="submit"] {
 
 .grid-container {
   display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: transparent !important;
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, 315.66px); /* Kolom dengan lebar tetap */
+  gap: 1.5rem; /* Jarak antar item */
+  justify-content: center; /* Pusatkan grid di tengah container */
   padding: 10px;
-  max-height: 100%;
-  width: 100%;
-  overflow-y: auto;
+  width: 100%; /* Pastikan grid tidak melebihi lebar container */
+  box-sizing: border-box; /* Hitung padding dalam lebar */
 }
 
 .grid-item, .grid-item-Late {
   background-color: #b4c688 !important;
   border: 1px solid #000000;
+  width: 315.66px; /* Lebar tetap */
+  height: 153px; /* Tinggi tetap */
   padding: 20px;
   text-align: left;
-  border-radius: 30px;
-  width: 320px;
-  height: 130px;
+  border-radius: 15px; /* Radius untuk tampilan lebih halus */
+  box-sizing: border-box; /* Pastikan padding tidak menambah ukuran total */
 }
-.grid-item-Late{
+
+.grid-item-Late {
   background-color: #b3430f !important;
 }
+
+
 
 .grid-item h1 {
   display: flex;
@@ -474,4 +478,30 @@ form button[type="submit"] {
   height: 40px;
   margin-bottom: 30px;
   text-align: center;
+}
+
+.action-container {
+  position: sticky;
+  top: 10px; /* Jarak dari atas */
+  z-index: 10; /* Agar berada di depan elemen lain */
+  background-color: white; /* Warna latar untuk kontras */
+  padding: 5px;
+  text-align: right;
+}
+.btn-complete {
+  background-color: #b4c688  !important; /* Green background */
+  border: 1px solid black; /* Remove borders */
+  color: black; /* White text */
+  padding: 5px 10px; /* Some padding */
+  text-align: center; /* Centered text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Make the container inline */
+  font-size: 16px; /* Increase font size */
+  margin: 4px 2px; /* Some margin */
+  cursor: pointer; /* Pointer/hand icon */
+  border-radius: 4px; /* Rounded corners */
+}
+
+.btn-complete:hover {
+  background-color: #45a049; /* Darker green on hover */
 }

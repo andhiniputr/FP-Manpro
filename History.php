@@ -65,7 +65,9 @@ if (!isset($_SESSION['ID'])) {
             </div>
             <div class="konten">
                 <div class="header">
-                    <h1>History</h1>
+                    <div class="judul">
+                        <h1>History</h1>
+                    </div>
                     <div class="dekor">
                         <div class="lingkaran"></div>
                         <div class="garis4"></div>

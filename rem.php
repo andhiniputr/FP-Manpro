@@ -65,33 +65,35 @@ if (!isset($_SESSION['ID'])) {
                 </ul>
             </div>
             <div class="konten">
-                <div>
-                    <div class="header">
-                        <div class="dekor">
-                            <h1>Reminder</h1>
-                            <div class="dekor">
-                                <div class="lingkaran"></div>
-                                <div class="garis4"></div>
-                            </div>
-                        </div>
+                <div class="header">
+                    <div class="judul">
+                        <h1>Reminder</h1>
                     </div>
-                    <div class="dropdown">
-                        <form id="sortForm" method="POST" action="">
-                            <select id="sort" name="sort" class="sort"
-                                onchange="document.getElementById('sortForm').submit()">
-                                <option value=" "><b>Sort</b></option>
-                                <option value="date">By Date</option>
-                                <option value="label">By Label</option>
-                            </select>
-                            <select id="categoryFilter" name="categoryFilter" class="sort"
-                                onchange="document.getElementById('sortForm').submit()">
-                                <option value="">All Categories</option>
-                                <option value="C001">Rumah</option>
-                                <option value="C002">Kantor</option>
-                                <option value="C003">Kuliah</option>
-                            </select>
-                        </form>
+                    <div class="dekor">
+                        <div class="lingkaran"></div>
+                        <div class="garis4"></div>
                     </div>
+                </div>
+                <div class="dropdown">
+                    <form id="sortForm" method="POST" action="">
+                        <select id="sort" name="sort" class="sort"
+                            onchange="document.getElementById('sortForm').submit()">
+                            <option value=" "><b>Sort</b></option>
+                            <option value="date">By Date</option>
+                            <option value="label">By Label</option>
+                        </select>
+                        <select id="categoryFilter" name="categoryFilter" class="sort"
+                            onchange="document.getElementById('sortForm').submit()">
+                            <option value="C004">All Categories</option>
+                            <option value="C001">Rumah</option>
+                            <option value="C002">Kantor</option>
+                            <option value="C003">Kuliah</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="action-container">
+                    <button type="submit" name="submit" form="taskForm" class="btn-complete">Tandai Sudah
+                        Selesai</button>
                 </div>
                 <div class="describe-container">
                     <?php
@@ -121,7 +123,7 @@ if (!isset($_SESSION['ID'])) {
                     $result = mysqli_query(connection(), $query);
                     ?>
                     <table cellspacing="10">
-                        <form action="updatestatus.php" method="POST">
+                        <form id="taskForm" action="updatestatus.php" method="POST">
                             <div class="grid-container">
                                 <?php while ($data = mysqli_fetch_array($result)): ?>
                                     <?php
@@ -156,7 +158,6 @@ if (!isset($_SESSION['ID'])) {
                                     </div>
                                 <?php endwhile ?>
                             </div>
-                            <button type="submit" name="submit">Tandai Sudah Selesai</button>
                         </form>
                     </table>
                 </div>
@@ -197,9 +198,6 @@ if (!isset($_SESSION['ID'])) {
 
         document.getElementById('datetime').textContent = dateTimeString;
     }
-
-    // Panggil fungsi updateDateTime setiap detik
-    setInterval(updateDateTime, 1000);
 </script>
 
 </html>
