@@ -12,7 +12,7 @@ if (isset($_POST['submit'])) {
             mysqli_query(connection(), $query);
         }
 
-        header('Location: History.php');
+        header('Location: history.php');
     } else {
         echo 'Tidak ada tugas yang dipilih.';
     }

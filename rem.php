@@ -53,7 +53,7 @@ if (!isset($_SESSION['ID'])) {
                     </li>
                     <li>
                         <img src="Asset/sand-watch1.png" alt="" class="Icon" />
-                        <a href="History.php">
+                        <a href="history.php">
                             <span class="Description">History</span>
                         </a>
                     </li>
@@ -104,9 +104,9 @@ if (!isset($_SESSION['ID'])) {
                     $categoryFilter = isset($_POST['categoryFilter']) ? $_POST['categoryFilter'] : ''; // Mengambil nilai filter kategori dari form
                     
                     $query = "SELECT tugas.*, kategori.Nama_Kategori
-                                FROM Tugas
-                                INNER JOIN Kategori ON Tugas.ID_Kategori = Kategori.ID_Kategori
-                                WHERE Tugas.ID_Pengguna = '$idPengguna' and Status = 0 ";
+                                FROM tugas
+                                INNER JOIN kategori ON tugas.ID_Kategori = kategori.ID_Kategori
+                                WHERE tugas.ID_Pengguna = '$idPengguna' and Status = 0 ";
 
                     if ($categoryFilter != '') {
                         $query .= " AND kategori.ID_Kategori = '$categoryFilter'";

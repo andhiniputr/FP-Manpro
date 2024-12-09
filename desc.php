@@ -86,7 +86,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </li>
                     <li>
                         <img src="Asset/sand-watch1.png" alt="" class="Icon" />
-                        <a href="History.php">
+                        <a href="history.php">
                             <span class="Description">History</span>
                         </a>
                     </li>
