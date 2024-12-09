@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require 'vendor/autoload.php'; // Pastikan PHPMailer terinstal melalui Composer
-
+Dotenv\Dotenv::createImmutable(__DIR__)->load();
 // Fungsi untuk mengirim email
 function kirimEmailSMTP($emailPenerima, $subjek, $pesan)
 {
@@ -14,8 +14,8 @@ function kirimEmailSMTP($emailPenerima, $subjek, $pesan)
         $mail->isSMTP();
         $mail->Host = 'smtp.gmail.com'; // Ganti sesuai penyedia SMTP Anda
         $mail->SMTPAuth = true;
-        $mail->Username = 'raegaxus12@gmail.com'; // Ganti dengan email Anda
-        $mail->Password = 'zrxwyydaheqyawvj'; // Ganti dengan password atau App Password
+        $mail->Username = $_ENV['Username']; // Ambil Username dari .env
+        $mail->Password = $_ENV['Password']; // Ambil Password dari .envPassword
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
