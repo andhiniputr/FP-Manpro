@@ -35,7 +35,7 @@ if (!isset($_SESSION['ID'])) {
                     </li>
                     <li>
                         <img src="Asset/home1.png" alt="" class="Icon" />
-                        <a href="index.php">
+                        <a href="home.php">
                             <span class="Description">Home</span>
                         </a>
                     </li>
@@ -198,6 +198,9 @@ if (!isset($_SESSION['ID'])) {
 
         document.getElementById('datetime').textContent = dateTimeString;
     }
+
+    // Panggil fungsi updateDateTime setiap detik
+    setInterval(updateDateTime, 1000);
 </script>
 
 </html>
