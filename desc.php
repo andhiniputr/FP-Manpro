@@ -21,6 +21,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $query = "INSERT INTO tugas (Judul, Deskripsi, Deadline,Status, ID_Kategori, ID_Label, ID_Pengguna)
             VALUES ('$judul', '$deskripsi', '$deadline',0, '$category', '$label', '$idPengguna')";
         $result = mysqli_query(connection(), $query);
+
+        $last_id = mysqli_insert_id(connection());
+
+        // Ambil ID_Tugas yang sudah diformat
+        $query = "SELECT ID_Tugas FROM tugas WHERE ID_Tugas = (SELECT CONCAT('T', LPAD('$last_id', 3, '0')))";
+
+        $result = mysqli_query(connection(), $query);
+        $row = mysqli_fetch_assoc($result);
+
+        // ID_Tugas yang sudah diformat
+        $formatted_id = $row['ID_Tugas'];
+
+        $api_url = "https://notify-api.hoaks.my.id/tugas/" . $formatted_id . "/callback";
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $api_url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, [
+            "Content-Type: application/json"
+        ]);
+
+        $response = curl_exec($ch);
+
+        if (curl_errno($ch)) {
+            echo 'Error: ' . curl_error($ch);
+        } else {
+            $data = json_decode($response, true);
+            print_r($data);
+        }
+
+        curl_close($ch);
     }
 
     if (isset($_POST['update'])) {
