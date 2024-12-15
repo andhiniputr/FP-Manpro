@@ -111,13 +111,13 @@ if (isset($_POST['update-profile'])) {
 
 
         <div class="reminder-history-describe">
-            <div class="describe">
+            <a href="desc.php" class="describe">
                 <div>
                     <h1><span>D</span>escribe</h1>
                     <p>Make your task more manageable using this feature. Easier your life with us.</p>
                 </div>
                 <img src="Asset/gambar3.png" alt="Gambar 3">
-            </div>
+            </a>
             <div class="reminder-history-container">
                 <a href="rem.php" class="reminder">
                     <div>
