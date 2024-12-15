@@ -17,15 +17,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $category = $_POST['category'];
         $label = $_POST['label'];
 
-        // Menyimpan data ke dalam tabel database, termasuk ID pengguna
-        $query = "INSERT INTO tugas (Judul, Deskripsi, Deadline,Status, ID_Kategori, ID_Label, ID_Pengguna)
-            VALUES ('$judul', '$deskripsi', '$deadline',0, '$category', '$label', '$idPengguna')";
+        $created_at = date('Y-m-d H:i:s');
+        $query = "INSERT INTO tugas (Judul, Deskripsi, Deadline,Status, ID_Kategori, ID_Label, ID_Pengguna, created_at)
+            VALUES ('$judul', '$deskripsi', '$deadline',0, '$category', '$label', '$idPengguna', '$created_at')";
         $result = mysqli_query(connection(), $query);
 
-        $last_id = mysqli_insert_id(connection());
-
-        // Ambil ID_Tugas yang sudah diformat
-        $query = "SELECT ID_Tugas FROM tugas WHERE ID_Tugas = (SELECT CONCAT('T', LPAD('$last_id', 3, '0')))";
+        $query = "SELECT ID_Tugas FROM tugas WHERE created_at = '$created_at'";
 
         $result = mysqli_query(connection(), $query);
         $row = mysqli_fetch_assoc($result);
@@ -47,9 +44,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (curl_errno($ch)) {
             echo 'Error: ' . curl_error($ch);
-        } else {
-            $data = json_decode($response, true);
-            print_r($data);
         }
 
         curl_close($ch);
